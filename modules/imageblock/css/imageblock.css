@@ -1,0 +1,39 @@
+@media all and (min-width: 720px) {
+  .imageblock-image-left .block-image {
+    float: left;
+    margin: 8px 30px 10px 0;
+  }
+  .imageblock-image-right .block-image {
+    float: right;
+    margin: 8px 0 10px 30px;
+  }
+  .imageblock-image-left .block-image,
+  .imageblock-image-left .block-body,
+  .imageblock-image-right .block-image,
+  .imageblock-image-right .block-body {
+    display: table;
+  }
+  .imageblock-image-right .block-body > *,
+  .imageblock-image-left .block-body > * {
+    margin-top: 0;
+  }
+}
+.imageblock-image-center .block-image {
+  text-align: center;
+}
+.imageblock-parallaxe {
+  padding: 5% 1.25rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media screen and (min-width: 720px) {
+  .imageblock-parallaxe {
+    background-attachment: fixed;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .imageblock-parallaxe {
+    padding: 10% 1.25rem;
+  }
+}

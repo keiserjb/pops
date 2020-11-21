@@ -1,0 +1,52 @@
+{
+    "_config_name": "field.instance.node.concert.field_map",
+    "field_name": "field_map",
+    "entity_type": "node",
+    "bundle": "concert",
+    "label": "Map",
+    "widget": {
+        "weight": "3",
+        "type": "text_textfield",
+        "module": "text",
+        "active": 1,
+        "settings": {
+            "size": "60"
+        }
+    },
+    "description": "",
+    "required": 0,
+    "deleted": 0,
+    "default_value": null,
+    "default_value_function": null,
+    "settings": {
+        "text_processing": "0",
+        "user_register_form": false
+    },
+    "display": {
+        "default": {
+            "label": "hidden",
+            "type": "simple_gmap",
+            "weight": "2",
+            "settings": {
+                "include_map": 1,
+                "include_static_map": 0,
+                "iframe_width": "400",
+                "iframe_height": "400",
+                "include_link": 0,
+                "link_text": "View larger map",
+                "zoom_level": "14",
+                "information_bubble": 1,
+                "include_text": 0,
+                "map_type": "m",
+                "langcode": "en"
+            },
+            "module": "simple_gmap"
+        },
+        "teaser": {
+            "label": "hidden",
+            "type": "hidden",
+            "weight": "3",
+            "settings": []
+        }
+    }
+}

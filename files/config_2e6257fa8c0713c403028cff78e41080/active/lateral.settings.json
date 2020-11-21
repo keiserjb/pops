@@ -1,0 +1,32 @@
+{
+    "_config_name": "lateral.settings",
+    "header_position": "left",
+    "font": "opensans",
+    "color": {
+        "palette": {
+            "header": "#05668d",
+            "headertext": "#f0f3bd",
+            "hovermenu": "#02c39a",
+            "herotext": "#f0f3bd",
+            "herobg": "#05668d",
+            "base": "#00a896",
+            "text": "#f0f3bd",
+            "link": "#05668d",
+            "borders": "#028090",
+            "formfocusborder": "#028090",
+            "primarytabs": "#f0f3bd",
+            "buttons": "#f0f3bd",
+            "buttonstext": "#028090",
+            "lightbg": "#02c39a",
+            "darkbg": "#028090",
+            "footer": "#00a896",
+            "footertext": "#f0f3bd"
+        },
+        "stylesheets": [
+            "public://color/lateral-589326b3/colors.css"
+        ],
+        "files": [
+            "public://color/lateral-589326b3/colors.css"
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "_config_name": "contact.categories",
+    "contact_default_category": 1,
+    "categories": [
+        {
+            "cid": 1,
+            "category": "Contact",
+            "recipients": "ralph_coleman@yahoo.com,sa11924313@gmail.com",
+            "reply": "",
+            "weight": 1
+        }
+    ]
+}

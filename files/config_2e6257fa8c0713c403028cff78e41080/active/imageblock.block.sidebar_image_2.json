@@ -1,0 +1,17 @@
+{
+    "_config_name": "imageblock.block.sidebar_image_2",
+    "parent": "default",
+    "label": "Sidebar Image 2",
+    "machine_name": "sidebar_image_2",
+    "title": "",
+    "content": "",
+    "format": "filtered_html",
+    "image": "4",
+    "alt": "violins",
+    "img_title": "",
+    "link": "",
+    "link_target": "",
+    "nofollow": 0,
+    "image_style": "",
+    "image_align": ""
+}

@@ -1,0 +1,7 @@
+name: pops
+recipe: backdrop
+config:
+  webroot: .
+services:
+  myservice:
+    type: phpmyadmin

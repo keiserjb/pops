@@ -1,0 +1,15 @@
+name = Image Block
+description = Provides a file field in block configuration form for displaying an image in a block.
+backdrop = 1.x
+type = module
+package = User interface
+dependencies[] = image
+dependencies[] = system (>=1.14.0)
+
+configure = admin/structure/imageblock/imageblock_configure
+stylesheets[all][] = css/imageblock.css
+
+; Added by Backdrop CMS packaging script on 2019-12-27
+project = imageblock
+version = 1.x-1.0.4
+timestamp = 1577446841

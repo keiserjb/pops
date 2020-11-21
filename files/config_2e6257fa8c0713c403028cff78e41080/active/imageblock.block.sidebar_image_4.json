@@ -1,0 +1,17 @@
+{
+    "_config_name": "imageblock.block.sidebar_image_4",
+    "parent": "default",
+    "label": "Sidebar Image 4",
+    "machine_name": "sidebar_image_4",
+    "title": "",
+    "content": "",
+    "format": "filtered_html",
+    "image": "6",
+    "alt": "tubas",
+    "img_title": "",
+    "link": "",
+    "link_target": "",
+    "nofollow": 0,
+    "image_style": "",
+    "image_align": ""
+}

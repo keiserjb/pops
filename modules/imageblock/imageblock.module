@@ -1,0 +1,135 @@
+<?php
+
+/**
+ * @file
+ * Primarily Backdrop hooks for Image blocks.
+ */
+
+/**
+ * Implements hook_autoload_info().
+ */
+function imageblock_autoload_info() {
+  return array(
+    'BlockImage' => 'imageblock.block.inc',
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function imageblock_theme() {
+  return array(
+    'imageblock_content' => array(
+      'render element' => 'elements',
+      'template' => 'imageblock-content',
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function imageblock_menu() {
+  $items['admin/structure/imageblock'] = array(
+    'title' => 'Image blocks',
+    'description' => 'List and configure Image blocks.',
+    'page callback' => 'imageblock_list',
+    'access arguments' => array('administer layouts'),
+    'file' => 'imageblock.admin.inc',
+  );
+  $items['admin/structure/imageblock/list'] = array(
+    'title' => 'Image blocks',
+    'description' => 'List of existing Image blocks.',
+    'page callback' => 'imageblock_list',
+    'access arguments' => array('administer layouts'),
+    'file' => 'imageblock.admin.inc',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+  );
+  $items['admin/structure/imageblock/imageblock_configure'] = array(
+    'title' => 'Settings',
+    'description' => 'Configure Image block settings.',
+    'page callback' => 'backdrop_get_form',
+    'page arguments' => array('imageblock_admin_settings_form'),
+    'access arguments' => array('administer site configuration'),
+    'file' => 'imageblock.admin.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 1,
+  );
+  $items['admin/structure/imageblock/%/delete'] = array(
+    'title' => 'Delete Image block',
+    'page callback' => 'backdrop_get_form',
+    'page arguments' => array('imageblock_block_delete', 3),
+    'access arguments' => array(3),
+    'access callback' => 'imageblock_delete_access',
+    'type' => MENU_CALLBACK,
+    'file' => 'imageblock.admin.inc',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_config_info().
+ */
+function imageblock_config_info() {
+  $prefixes['imageblock.settings'] = array(
+    'label' => t('Image block settings'),
+    'group' => t('Configuration'),
+  );
+  // Note that image files are not exportable.
+  $prefixes['imageblock.block'] = array(
+    'name_key' => 'machine_name',
+    'label_key' => 'label',
+    'group' => t('Image blocks'),
+  );
+  return $prefixes;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function imageblock_block_info() {
+  $blocks = array();
+  $default_info = t('A basic block for adding custom text and an image.');
+  $blocks['default'] = array(
+    'info' => t('Image block'),
+    'description' => $default_info,
+    'class' => 'BlockImage',
+  );
+  // Image blocks are reusable.
+  $config_names = config_get_names_with_prefix('imageblock.block.');
+  foreach ($config_names as $config_name) {
+    $block = config_get($config_name);
+    $block_info = array();
+    $block_info['info'] = $block['label'];
+    $block_info['class'] = 'BlockImage';
+    $block_info['description'] = $default_info;
+    $blocks[$block['machine_name']] = $block_info;
+  }
+  return $blocks;
+}
+
+/**
+ * Load a single Image block by its machine name.
+ *
+ * Helper function for #machine_name form item.
+ */
+function imageblock_load($name = '') {
+  $block = config_get('imageblock.block.' . $name);
+  if (!$block) {
+    return FALSE;
+  }
+  return $block;
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function imageblock_preprocess_block(&$variables) {
+  if ($variables['block']->module == 'imageblock') {
+    $variables['classes'][] = 'block-imageblock';
+    if ($variables['block']->delta == 'default') {
+      $machine_name = $variables['block']->settings['machine_name'];
+      $variables['classes'][] = backdrop_html_class('block-imageblock-' . $machine_name);
+    }
+  }
+}

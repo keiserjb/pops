@@ -1,0 +1,17 @@
+{
+    "_config_name": "imageblock.block.sidebar_image_3",
+    "parent": "default",
+    "label": "Sidebar Image 3",
+    "machine_name": "sidebar_image_3",
+    "title": "",
+    "content": "",
+    "format": "filtered_html",
+    "image": "5",
+    "alt": "Horns",
+    "img_title": "",
+    "link": "",
+    "link_target": "",
+    "nofollow": 0,
+    "image_style": "",
+    "image_align": ""
+}
