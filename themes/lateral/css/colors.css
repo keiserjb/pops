@@ -74,7 +74,7 @@ ul.primary li.active a {
 }
 .pager-current {
   background: #888b8e;
-  color: #fff;
+  color: #fcffff;
 }
 
 /**
@@ -143,7 +143,6 @@ input.button-danger:hover {
   outline-color: #ff4747;
 }
 select {
-  background-color: initial;
   border: 1px solid #cccccc;
 }
 .vertical-tabs {
@@ -228,4 +227,11 @@ td.active {
   .view-promoted .view-content > div:nth-child(odd) {
     border-right: 1px solid #cccccc;
   }
+}
+.maintenance-page {
+  background-color: #e6e6e7;
+}
+.maintenance-page .l-container {
+  border: 1px solid #cccccc;
+  background-color: #f8f8f8;
 }
