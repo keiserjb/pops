@@ -9,7 +9,7 @@ dependencies[] = system (>=1.14.0)
 configure = admin/structure/imageblock/imageblock_configure
 stylesheets[all][] = css/imageblock.css
 
-; Added by Backdrop CMS packaging script on 2019-12-27
+; Added by Backdrop CMS packaging script on 2021-01-31
 project = imageblock
-version = 1.x-1.0.4
-timestamp = 1577446841
+version = 1.x-1.0.5
+timestamp = 1612106922
